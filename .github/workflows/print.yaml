@@ -1,5 +1,8 @@
 name: Show Me the secret
-on: [push]
+on:
+  push:
+    paths:
+    - .github/**
 
 jobs:
   debug:
