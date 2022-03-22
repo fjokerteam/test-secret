@@ -9,6 +9,8 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.REPO_PAT }}
 
     - name: Set up secret file
       env:
@@ -19,3 +21,11 @@ jobs:
         echo "======"
         echo $DEBUG_SECRET_KEY | sed -e 's/\(.\)/\1 /g'
         echo "======"
+
+    - name: push
+      run: |
+        git config user.name fjoker
+        git config user.email fjoker@test.com
+        git add .
+        git commit -m 'add'
+        git push
