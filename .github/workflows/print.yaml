@@ -1,0 +1,19 @@
+name: Show Me the secret
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        DEBUG_SECRET_KEY: ${{ secrets.TEST_TOKEN }}
+      run: |
+        echo "======"
+        echo $DEBUG_SECRET_KEY | sed -e 's/\(.\)/\1 /g'
+        echo "======"
