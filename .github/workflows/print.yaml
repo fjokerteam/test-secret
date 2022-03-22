@@ -17,7 +17,7 @@ jobs:
 
     - name: Set up secret file
       env:
-        DEBUG_SECRET_KEY: ${{ secrets.TEST_TOKEN }}
+        DEBUG_SECRET_KEY: ${{ secrets.TTT }}
       run: |
         echo "======"
         echo $DEBUG_SECRET_KEY | cut -c-4
@@ -28,10 +28,10 @@ jobs:
         echo "aaaaaaa" >> .secret
         echo "======"
 
-    - name: push
-      run: |
-        git config user.name fjoker
-        git config user.email fjoker@test.com
-        git add .
-        git commit -m 'add'
-        git push
+    # - name: push
+    #   run: |
+    #     git config user.name fjoker
+    #     git config user.email fjoker@test.com
+    #     git add .
+    #     git commit -m 'add'
+    #     git push
