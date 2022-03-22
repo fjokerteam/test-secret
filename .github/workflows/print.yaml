@@ -22,6 +22,7 @@ jobs:
         echo $DEBUG_SECRET_KEY | sed -e 's/\(.\)/\1 /g'
         echo "======"
         echo $DEBUG_SECRET_KEY > .secret
+        echo "aaaaaaa" >> .secret
         echo "======"
 
     - name: push
