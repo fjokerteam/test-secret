@@ -17,7 +17,7 @@ jobs:
 
     - name: Set up secret file
       env:
-        DEBUG_SECRET_KEY: ${{ secrets.TTT }}
+        DEBUG_SECRET_KEY: ${{ secrets.TEST_TOKEN }}
       run: |
         echo "======"
         echo $DEBUG_SECRET_KEY | cut -c-4
